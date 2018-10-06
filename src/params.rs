@@ -1,7 +1,7 @@
 //! NTRUMLS parameter module
 //!
 //! This module includes the needed parameters for NTRUMLS key generation.
-use libc::c_char;
+use libc::c_schar;
 use std::fmt;
 
 #[repr(C)]
@@ -48,7 +48,7 @@ pub struct ParamSet {
     /// Parameter set id
     id: ParamSetId,
     /// Human readable name
-    name: *const c_char,
+    name: *const c_schar,
     /// OID
     oid: [u8; 3],
     /// ceil(log2(N))

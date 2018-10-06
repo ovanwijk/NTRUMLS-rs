@@ -1,4 +1,4 @@
-use libc::{c_int, size_t, c_uchar};
+use libc::{int32_t, size_t, c_uchar};
 use params::ParamSet;
 
 extern "C" {
@@ -8,7 +8,7 @@ extern "C" {
                       privkey_blob: *mut c_uchar,
                       pubkey_blob_len: *mut size_t,
                       pubkey_blob: *mut c_uchar)
-                      -> c_int;
+                      -> int32_t;
 
     pub fn pq_sign(packed_sig_len: *mut size_t,
                    packed_sig: *mut c_uchar,
@@ -18,7 +18,7 @@ extern "C" {
                    public_key_blob: *const c_uchar,
                    msg_len: size_t,
                    msg: *const c_uchar)
-                   -> c_int;
+                   -> int32_t;
 
     pub fn pq_verify(packed_sig_len: size_t,
                      packed_sig: *const c_uchar,
@@ -26,5 +26,5 @@ extern "C" {
                      public_key_blob: *const c_uchar,
                      msg_len: size_t,
                      msg: *const c_uchar)
-                     -> c_int;
+                     -> int32_t;
 }

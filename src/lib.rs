@@ -38,7 +38,7 @@
 #![warn(trivial_casts, trivial_numeric_casts, unused, unused_extern_crates,
     unused_import_braces, unused_qualifications, unused_results, variant_size_differences)]
 
-extern crate libc;
+extern crate cty as libc;
 
 pub mod params;
 mod ffi;
